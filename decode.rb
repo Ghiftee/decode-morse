@@ -1,5 +1,5 @@
 def morse_dict 
-decoder = {
+{
   ".-"=>"A",
   "-..." => "B",
   "-.-."=>"C",
@@ -33,4 +33,8 @@ def decode_char(char)
   morse_dict[char]
 end
 
-puts decode_char('.')
+def decode_word(word)
+  word.split.map { |letter| decode_char(letter) }.join
+end
+
+#  puts decode_word('. -...')
